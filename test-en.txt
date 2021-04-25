@@ -1,0 +1,5 @@
+en01|LJ|I hava an apple
+en02|LJ|Your desired text
+en03|LJ|twinkle twinkle little star
+en04|LJ|how i wonder what you are
+en05|LJ|in all these lines the facts are drawn together by a strong thread of unity.
