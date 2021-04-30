@@ -39,14 +39,15 @@ def evaluate(model, step, configs):
         for batch in group:
             batch = to_device(batch, device)
 
-            # Forward
-            output = model(*batch)
+            with torch.no_grad():
+                # Forward
+                output = model(*batch)
 
-            # Cal loss
-            loss = Loss(output, batch)
+                # Cal loss
+                loss = Loss(output, batch)
 
-            for i in range(len(loss)):
-                loss_sums[i] += loss[i].item() * len(batch[0])
+                for i in range(len(loss)):
+                    loss_sums[i] += loss[i].item() * len(batch[0])
 
     # message
     loss_means = [loss_sum / len(dataset) for loss_sum in loss_sums]
